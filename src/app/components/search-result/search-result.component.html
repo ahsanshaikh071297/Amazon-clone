@@ -1,0 +1,133 @@
+<div class="search-result-nav">
+    <div class="nav-main-menu">
+        <div class="nav-menu">
+            <div style="color: black; margin-left: 10px;">1-{{results}} of over {{total_products}} results for </div>&nbsp;<div style="color: #c45500; font-weight: 700;"> "{{searchQuery}}"</div>
+        </div>
+    </div>
+</div>
+<div class="search-main">
+    <div class="left-content" style="color: black;" >
+        <!-- Left Content Goes Here -->
+        <!-- <div class="expand-collapse">
+            <button (click)="expandAll()">Expand All</button>
+            <button (click)="collapseAll()">Collapse All</button>
+        </div> -->
+
+        <div class="accordion-header " (click)="toggleAccordion(1)">
+            <span>Delivery Day</span>
+            <i class="fas fa-chevron-down" [ngClass]="{'rotate': activeAccordion === 1}"></i>
+        </div>
+        <div class="panel" [ngClass]="{'active': activeAccordion === 1}">
+            <p>Content for Accordion 1.</p>
+        </div>
+        <hr> <!-- Line after Accordion 1 -->
+    
+        <div class="accordion-header" (click)="toggleAccordion(2)">
+            <span>Category</span>
+            <i class="fas fa-chevron-down" [ngClass]="{'rotate': activeAccordion === 2}"></i>
+        </div>
+        <div class="panel" [ngClass]="{'active': activeAccordion === 2}">
+            <p>Content for Accordion 2.</p>
+        </div>
+        <hr> <!-- Line after Accordion 2 -->
+    
+        <!-- Accordion 3 -->
+        <div class="accordion-header" (click)="toggleAccordion(3)">
+            <span>Customer Review</span>
+            <i class="fas fa-chevron-down" [ngClass]="{'rotate': activeAccordion === 3}"></i>
+        </div>
+        <div class="panel" [ngClass]="{'active': activeAccordion === 3}">
+            <p>Content for Accordion 3.</p>
+        </div>
+        <hr> <!-- Line after Accordion 3 -->
+        <div class="accordion-header" (click)="toggleAccordion(4)">
+            <span>Brands</span>
+            <i class="fas fa-chevron-down" [ngClass]="{'rotate': activeAccordion === 4}"></i>
+        </div>
+        <div class="panel" [ngClass]="{'active': activeAccordion === 4}">
+            <p>Content for Accordion 3.</p>
+        </div>
+        <hr> <!-- Line after Accordion 3 -->
+        <div class="accordion-header" (click)="toggleAccordion(5)">
+            <span>Price</span>
+            <i class="fas fa-chevron-down" [ngClass]="{'rotate': activeAccordion === 5}"></i>
+        </div>
+        <div class="panel" [ngClass]="{'active': activeAccordion === 5}">
+            <p>Content for Accordion 3.</p>
+        </div>
+        <hr> <!-- Line after Accordion 3 -->
+        <div class="accordion-header" (click)="toggleAccordion(6)">
+            <span>Deals and Discounts</span>
+            <i class="fas fa-chevron-down" [ngClass]="{'rotate': activeAccordion === 6}"></i>
+        </div>
+        <div class="panel" [ngClass]="{'active': activeAccordion === 6}">
+            <p>Content for Accordion 3.</p>
+        </div>
+        <hr> <!-- Line after Accordion 3 -->
+        <div class="accordion-header" (click)="toggleAccordion(7)">
+            <span>Pay on Delivery</span>
+            <i class="fas fa-chevron-down" [ngClass]="{'rotate': activeAccordion === 7}"></i>
+        </div>
+        <div class="panel" [ngClass]="{'active': activeAccordion === 7}">
+            <p>Content for Accordion 3.</p>
+        </div>
+        <hr> <!-- Line after Accordion 3 -->
+        <div class="accordion-header" (click)="toggleAccordion(8)">
+            <span>Processor Speed</span>
+            <i class="fas fa-chevron-down" [ngClass]="{'rotate': activeAccordion === 8}"></i>
+        </div>
+        <div class="panel" [ngClass]="{'active': activeAccordion === 8}">
+            <p>Content for Accordion 3.</p>
+        </div>
+        <hr> <!-- Line after Accordion 3 -->
+        <div class="accordion-header" (click)="toggleAccordion(9)">
+            <span>Battery Capacity</span>
+            <i class="fas fa-chevron-down" [ngClass]="{'rotate': activeAccordion === 9}"></i>
+        </div>
+        <div class="panel" [ngClass]="{'active': activeAccordion === 9}">
+            <p>Content for Accordion 3.</p>
+        </div>
+        <hr> <!-- Line after Accordion 3 -->
+        <div class="accordion-header" (click)="toggleAccordion(10)">
+            <span>Colour</span>
+            <i class="fas fa-chevron-down" [ngClass]="{'rotate': activeAccordion === 10}"></i>
+        </div>
+        <div class="panel" [ngClass]="{'active': activeAccordion === 10}">
+            <p>Content for Accordion 3.</p>
+        </div>
+        <hr> <!-- Line after Accordion 3 -->
+        <div class="accordion-header" (click)="toggleAccordion(11)">
+            <span>Item Condition</span>
+            <i class="fas fa-chevron-down" [ngClass]="{'rotate': activeAccordion === 11}"></i>
+        </div>
+        <div class="panel" [ngClass]="{'active': activeAccordion === 11}">
+            <p>Content for Accordion 3.</p>
+        </div>
+        <hr> <!-- Line after Accordion 3 -->
+    
+    </div>
+    <div class="right-content">
+        <!-- Right Content Goes Here -->
+        <h2 style="margin-top: 2px; margin-bottom: 0px; color: black;">Results</h2>
+        <p style="margin: 0px; color: grey;">Check each product page for other buying options.</p> 
+       
+        <div class="right-inner-container" *ngFor="let product of products" >
+            <div class="search-card left-card" >
+                <!-- Left Card Content Goes Here -->
+                <img class="image" [src]="product.product_photo" alt="">
+            </div>
+            <div class="search-card right-card" >
+                <!-- Right Card Content Goes Here -->
+                <div>
+                    <span>{{ product.product_title }}</span><br>
+                    <span [innerHTML]="generateStarRating(4.5)" style="color: rgb(255, 179, 0);"></span><br>
+                    <span style="font-size: medium; color: gray; font-weight: 400;">{{product.sales_volume}}</span><br>
+                    <span style="font-size: xx-large;">{{product.product_price}} </span><span style="font-size: medium; color: gray; font-weight: 400;"> M.R.P: {{product.product_original_price}} (9% off)</span><br>
+                    <span style="font-size: medium;">{{product.delivery}}</span><br><br>
+                    <button >Add to cart</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

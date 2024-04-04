@@ -1,0 +1,169 @@
+.search-result-nav {
+    height: 2.5em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Increased shadow blur radius */
+    border-bottom: 1px solid #514f4f; /* Adding a border */
+    z-index: 999; /* Ensure the navbar is above other elements */
+}
+
+button {
+    background-color: rgb(255, 238, 0);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.image {
+    width: 200px; /* Make the image fill the width of the container */
+    height: 250px; /* Make the image fill the height of the container *//* Fill the container without maintaining aspect ratio */
+    margin-left: 45px;
+}
+
+.star {
+    color: red;
+  }
+
+
+.search-main{
+    display: flex;
+    height: 100%; /* Adjust the height as needed */
+}
+
+.left-content {
+    width: 20%; /* 40% of the container width */
+    background-color: white; /* Example background color for left content */
+    padding: 5px;
+}
+
+.right-content {
+    width: 80%; /* 60% of the container width */
+     background-color: white; /*Example background color for right content */
+    padding: 5px;
+}
+
+.right-inner-container {
+    display: flex;
+    margin-bottom: 10px;
+    border: 0.1px solid rgb(206, 206, 206); /* Border on all four sides */
+    border-radius: 5px;
+    /* height: 100%; */
+}
+
+.search-card {
+    flex-grow: 1;
+    padding: 5px;
+}
+
+.search-card span {
+    font-size: large;
+    font-weight: bold;
+    color: black;
+}
+
+.left-card {
+    width: 25%; /* 30% of the right content width */
+    background-color: #f6f6f6; /* Example background color for left card */
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.right-card {
+    width: 75%; /* 70% of the right content width */
+    background-color: #fff; /* Example background color for right card */
+    margin-left: 10px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Style the accordion buttons */
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-weight: bold;
+}
+
+/* Change color to orange on hover of every accordion header */
+.accordion-header:hover {
+    color: #c45500;
+}
+
+/* Change color of button on hover */
+button.accordion:hover {
+    background-color: #ccc;
+}
+
+/* Style the accordion panel */
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+/* Show the panel when the accordion is active */
+button.accordion.active {
+    background-color: #ccc;
+}
+
+div.panel.active {
+    max-height: 500px; /* Set maximum height of the panel */
+}
+
+/* Style the line after each accordion */
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.expand-collapse {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.expand-collapse button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+/* Style the chevron icon */
+.fas.fa-chevron-down {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Rotate the chevron icon when accordion is active */
+.rotate {
+    transform: rotate(180deg);
+}
+
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-content, .right-content {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .left-card, .right-card {
+        width: 100%; /* Full width for cards on smaller screens */
+    }
+}
