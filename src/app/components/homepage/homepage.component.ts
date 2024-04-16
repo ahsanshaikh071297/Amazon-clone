@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BestSellers } from 'src/models/bestSellers';
 import { Deals } from 'src/models/deals';
 import { List } from 'src/models/productCategoryList';
-import { Details } from 'src/models/productDetails';
+import { Product } from 'src/models/productDetails';
 import { Reviews } from 'src/models/productReview';
 import { ApiResponse } from 'src/models/searchData';
 import { AmazonServiceService } from 'src/services/amazon-service.service';
@@ -18,7 +18,7 @@ export class HomepageComponent implements OnInit {
   category : string = "software"
   apiResponse: ApiResponse | null = null;
   list : List | null = null; 
-  details : Details | null = null;
+  details : Product | null = null;
   reviews : Reviews | null = null;
   bestSeller : BestSellers | null = null;
   deals : Deals | null = null;
@@ -26,7 +26,7 @@ export class HomepageComponent implements OnInit {
   constructor( private api : AmazonServiceService){}
 
   ngOnInit(): void {
-    // this.getDeals()
+    // this.productDetails()
   }
 
   searchQuery() {

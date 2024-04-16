@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiResponse, Product } from 'src/models/searchData';
 import { AmazonServiceService } from 'src/services/amazon-service.service';
 import { UiServiceService } from 'src/services/ui-service.service';
@@ -19,7 +19,7 @@ export class SearchResultComponent implements OnInit {
   total_products: any;
   activeAccordion: number | null = null;
 
-  constructor(private route: ActivatedRoute, private searchService: UiServiceService, private api : AmazonServiceService) {}
+  constructor(private route: ActivatedRoute, private searchService: UiServiceService, private api : AmazonServiceService, private router: Router) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -84,8 +84,6 @@ export class SearchResultComponent implements OnInit {
   }
   
   
-  
-
   getSearchQuery() {
     this.api.search(this.searchQuery).subscribe( (response: ApiResponse) =>{
       console.log(response)

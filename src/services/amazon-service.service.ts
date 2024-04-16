@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class AmazonServiceService {
   private apiUrl = 'https://real-time-amazon-data.p.rapidapi.com';
   private headers = new HttpHeaders({
-    'X-RapidAPI-Key': 'ed9b384d60msh9985f18f378ab9dp15423ajsncb686e87e938',
+    'X-RapidAPI-Key': 'f3225e27admsh7a09cc494869a9ep1faf34jsn8660ae58b70c',
     'X-RapidAPI-Host': 'real-time-amazon-data.p.rapidapi.com'
   });
 
@@ -18,7 +18,7 @@ export class AmazonServiceService {
   }
 
   productDetails(asin : string): any {
-    return this.http.get(`${this.apiUrl}/product-details?asin=${asin}&country=US`, { headers: this.headers });
+    return this.http.get(`${this.apiUrl}/product-details?asin=${asin}&country=IN`, { headers: this.headers });
   }
 
   productOffers(asin : string): any {

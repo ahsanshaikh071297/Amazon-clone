@@ -1,0 +1,139 @@
+.detail-main{
+    display: flex;
+    height: 100%; /* Adjust the height as needed */
+}
+
+.left-content {
+    width: 40%; /* 40% of the container width */
+    background-color: white; /* Example background color for left content */
+    padding: 5px;
+}
+
+.right-content {
+    width: 60%; /* 60% of the container width */
+     background-color: white; /*Example background color for right content */
+    padding: 5px;
+}
+
+.technical-details{
+    display: flex;
+    height: 100%;
+    background-color: white;
+}
+
+.image {
+    width: 500px; /* Make the image fill the width of the container */
+    height: 500px; /* Make the image fill the height of the container *//* Fill the container without maintaining aspect ratio */
+    margin-left: 45px;
+    margin-top: 50px;
+}
+
+.product-review{
+    display: flex;
+    height: 100%;
+}
+
+.rating{
+    width: 40%; /* 40% of the container width */
+    background-color: rgb(255, 255, 255); /* Example background color for left content */
+    padding: 5px;
+}
+
+.customer-review{
+    width: 60%; /* 40% of the container width */
+    background-color: rgb(255, 255, 255); /* Example background color for left content */
+    padding: 5px;
+}
+
+/* product-details.component.css */
+
+/* Define styles for even and odd rows */
+
+.table-container {
+    display: flex; /* Align child elements horizontally */
+  }
+  
+  .table-wrapper {
+    flex: 1; /* Occupy equal space within the container */
+    margin-right: 20px; /* Add some spacing between tables */
+  }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Style for even rows */
+  tr:nth-child(even) {
+    background-color: #f2f2f2; /* Gray background */
+  }
+  
+  /* Style for odd rows */
+  tr:nth-child(odd) {
+    background-color: #ffffff; /* White background */
+  }
+  
+  /* Define styles for table header */
+  th {
+    background-color: #dddddd; /* Light gray background */
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #000000; /* Border at the bottom of header */
+  }
+  
+  /* Define styles for table cells */
+  td {
+    padding: 8px;
+    border-bottom: 1px solid #dddddd; /* Border at the bottom of cells */
+  }
+  
+  /* product-details.component.css */
+
+/* product-details.component.css */
+
+/* product-details.component.css */
+
+.rating-meter {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .progress-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .bar {
+    height: 20px;
+    background-color: #f0f0f0; /* Default color for the bar */
+    width: 200px; /* Fixed width for the entire bar */
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #3498db; /* Color for the progress inside the bar */
+  }
+
+  /* product-details.component.css */
+
+.variation-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.variation-item {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.variation-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+  
+   

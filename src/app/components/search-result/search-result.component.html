@@ -119,8 +119,9 @@
             <div class="search-card right-card" >
                 <!-- Right Card Content Goes Here -->
                 <div>
-                    <span>{{ product.product_title }}</span><br>
+                    <span><a [routerLink]="['/product-details', product.asin]">{{ product.product_title }}</a></span><br>
                     <span [innerHTML]="generateStarRating(4.5)" style="color: rgb(255, 179, 0);"></span><br>
+                    
                     <span style="font-size: medium; color: gray; font-weight: 400;">{{product.sales_volume}}</span><br>
                     <span style="font-size: xx-large;">{{product.product_price}} </span><span style="font-size: medium; color: gray; font-weight: 400;"> M.R.P: {{product.product_original_price}} (9% off)</span><br>
                     <span style="font-size: medium;">{{product.delivery}}</span><br><br>

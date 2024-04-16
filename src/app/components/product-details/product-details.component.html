@@ -1,0 +1,180 @@
+<div class="detail-main">
+    <div class="left-content" style="color: black;" *ngIf="details">
+        <img [src]="details.product_photo" alt="" class="image">
+    </div>
+    <div class="right-content" style="color: black;">
+        <div class="right-inner-content" *ngIf="details">
+            <span style="font-size: x-large; font-weight: 500;">{{ details.product_title }}</span><br>
+            <span style="font-size: small; color: gray;">{{details.sales_volume}}</span><br>
+            <hr>
+            <span style="font-size: xx-large; font-weight: 500;">{{details.product_price}}</span><br>
+            <span style="font-size: small; color: gray;">M.R.P.: {{details.product_original_price}}</span><br>
+            <span>Inclusive of all taxes</span><br>
+            <hr>
+            <div *ngIf="details">
+                <!-- Color variations -->
+                <span style="color: gray;">Colours</span>
+                <div class="variation-row">
+                    
+                    <div *ngFor="let color of details.product_variations.color" class="variation-item">
+                        <img [src]="color.photo" alt="{{ color.value }}" class="variation-image"><br>
+                        <span>{{ color.value }}</span>
+                    </div>
+                </div>
+
+                <!-- Size variations -->
+                <span style="color: gray;">Size</span>
+                <div class="variation-row">
+                    
+                    <div *ngFor="let size of details.product_variations.size" class="variation-item">
+                        <span>{{ size.value }}</span>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <span>
+                About this item:
+                <ul>
+                    <li *ngFor="let item of details.about_product">{{ item }}</li>
+                </ul>
+            </span><br>
+        </div>
+    </div>
+</div>
+<!-- <div>
+        <span style="color: black;">technical-details</span>
+    </div> -->
+<!-- <h2 style="color: black; margin-left: 45%;">Technical details</h2> -->
+<!-- <div class="table-container">
+
+    <div class="table-wrapper">
+
+        <table style="color: black; margin: 30px;">
+            <tr>
+                <th>Attribute</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>ASIN</td>
+                <td>hello </td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>hello</td>
+            </tr>
+            <tr>
+                <td>Original Price</td>
+                <td>hello</td>
+            </tr>
+            <tr>
+                <td>Currency</td>
+                <td>hello</td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>hello</td>
+            </tr>
+            <tr>
+                <td>Star Rating</td>
+                <td>hello</td>
+            </tr>
+        </table>
+    </div>
+    <div class="table-wrapper">
+        <table style="color: black; margin: 30px;">
+            <tr>
+                <th>Attribute</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>ASIN</td>
+                <td>hello </td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>hello</td>
+            </tr>
+            <tr>
+                <td>Original Price</td>
+                <td>hello</td>
+            </tr>
+            <tr>
+                <td>Currency</td>
+                <td>hello</td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>hello</td>
+            </tr>
+            <tr>
+                <td>Star Rating</td>
+                <td>hello</td>
+            </tr>
+        </table>
+    </div>
+</div> -->
+<!-- <hr>
+<h2 style="color: black; margin-left: 20px;">What is there in the box ?</h2>
+<span></span>
+<hr> -->
+<hr>
+<div class="product-review" *ngIf="details">
+    <div class="rating">
+        <h3 style="color: black; margin-left: 20px;">Customer reviews</h3>
+        <span style="color: gray; margin-left: 20px;">{{details.product_num_ratings}} global rating</span>
+        <!-- Rating distribution meter -->
+        <!-- Rating distribution meter -->
+        <!-- [style.width]="product.rating_distribution['1']" -->
+
+        <div class="rating-meter" style="margin-left: 20px;">
+            <div class="progress-bar">
+                <span style="color: black;">1 star</span>&nbsp;
+                <div class="bar">
+                    <div class="progress" [style.width]="details.rating_distribution['1']"></div>
+                </div>&nbsp;
+                <span style="color: black;">{{details.rating_distribution['1']}}</span>
+            </div>
+            <div class="progress-bar">
+                <span style="color: black;">2 star</span>&nbsp;
+                <div class="bar">
+                    <div class="progress" [style.width]="details.rating_distribution['2']"></div>
+                </div>&nbsp;
+                <span style="color: black;">{{details.rating_distribution['2']}}</span>
+            </div>
+            <div class="progress-bar">
+                <span style="color: black;">3 star</span>&nbsp;
+                <div class="bar">
+                    <div class="progress" [style.width]="details.rating_distribution['3']"></div>
+                </div>&nbsp;
+                <span style="color: black;">{{details.rating_distribution['3']}}</span>
+            </div>
+            <div class="progress-bar">
+                <span style="color: black;">4 star</span>&nbsp;
+                <div class="bar">
+                    <div class="progress" [style.width]="details.rating_distribution['4']"></div>
+                </div>&nbsp;
+                <span style="color: black;">{{details.rating_distribution['4']}}</span>
+            </div>
+            <div class="progress-bar">
+                <span style="color: black;">5 star</span>&nbsp;
+                <div class="bar">
+                    <div class="progress" [style.width]="details.rating_distribution['5']"></div>
+                </div>&nbsp;
+                <span style="color: black;">{{details.rating_distribution['5']}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="customer-review">
+        <h3 style="color: black;">Customer say</h3>
+        <span style="color: black;">{{details.customers_say}}</span>
+        <!-- Review aspects -->
+        <!-- Review aspects -->
+        <!-- <div class="review-aspects">
+    <div *ngIf="details.review_aspects">
+      <div *ngFor="let aspect of Object.entries(details.review_aspects)" class="aspect-box" [ngClass]="getAspectClass(aspect[1])">
+        <span>{{ aspect[0] }}</span>
+      </div>
+    </div>
+  </div> -->
+    </div>
+</div>
